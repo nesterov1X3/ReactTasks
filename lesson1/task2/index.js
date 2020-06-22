@@ -24,12 +24,12 @@ const element = React.createElement(
     'div',
     { className: 'greeting' },
     React.createElement(
-        'p',
+        'div',
         { className: 'greeting__title' },
         'Hello, React!'),
 
     React.createElement(
-        'p',
+        'div',
         { className: 'greeting__text' },
         'I\'m learning React'
     )
