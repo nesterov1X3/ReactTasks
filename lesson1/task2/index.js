@@ -26,12 +26,12 @@ const element = React.createElement(
     React.createElement(
         'div',
         { className: 'greeting__title' },
-        'Hello, React!'),
+        'Hello, world!'),
 
     React.createElement(
         'div',
         { className: 'greeting__text' },
         'I\'m learning React'
-    )
-)
+    ),
+);
 ReactDOM.render(element, rootElement)
