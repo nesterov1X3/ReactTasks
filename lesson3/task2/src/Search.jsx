@@ -1,4 +1,4 @@
-export const Seacrh = props => {
+export const Search = props => {
     console.log(props);
 
      return (
