@@ -1,11 +1,3 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.scss'
-import './search.scss'
-
-
-const rootElement = document.querySelector('#root');
-
 export const Seacrh = props => {
     console.log(props);
 
@@ -20,5 +12,3 @@ export const Seacrh = props => {
     )
      
 }
-
-ReactDOM.render(<Seacrh name="Bob"/>, rootElement)
