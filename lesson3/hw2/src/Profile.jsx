@@ -3,17 +3,14 @@ import React from 'react';
 
 
 const Profile = (props) => {
-    const formatter = new Intl.DateTimeFormat('en',{
-    day: '2-digit',
-    month: 'short',
-    year: '2-digit',
-    hour12: false
-});
-    const birthD = formatter.format(new Date(props.birthDate))
-    
-    // const age = (new Date().getFullYear() - new Date(props.birthDate).getFullYear());
+
+    const birthD = new Date(props.UserData.birthDate).format('DD MMM YY')
+
     return (
-        <div className="profile__birth">{`${props.firstName} ${props.lastName}. Was born ${birthD } in ${props.birthPlace}`}</div>
+        <>
+        <div className="profile__name">{`${props.UserData.firstName} ${props.UserData.lastName}`}</div>
+        <div className="profile__birth">{` Was born ${birthD } in ${props.UserData.birthPlace}`}</div>
+        </>
     )
 }
 
