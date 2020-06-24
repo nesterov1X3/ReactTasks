@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './search.scss'
 // export const Search = props => {
 //     console.log(props);
 
@@ -17,7 +18,6 @@ import React, { Component } from 'react'
 export class Search extends Component {
     render() {
         return (
-            
                 <div className="search">
                     <h1 className="search__title">{`Hello, ${this.props.name}. What to search for you?`}</h1>
                     <div className="search__field">
@@ -25,7 +25,6 @@ export class Search extends Component {
                         <button className="search__button">Search</button>
                     </div>
                 </div>
-            
         )
     }
 }
