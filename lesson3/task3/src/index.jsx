@@ -8,4 +8,7 @@ const rootElement = document.querySelector('#root');
 
 
 
-ReactDOM.render(<Comment name="Tom"/>, rootElement)
+
+ReactDOM.render(
+    <App/>,
+ rootElement);

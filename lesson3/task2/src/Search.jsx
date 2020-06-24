@@ -15,7 +15,7 @@ import './search.scss'
 
 // }
 
-export class Search extends Component {
+ class Search extends Component {
     render() {
         return (
                 <div className="search">
@@ -28,3 +28,5 @@ export class Search extends Component {
         )
     }
 }
+
+export default Search;

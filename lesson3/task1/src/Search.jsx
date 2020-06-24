@@ -1,5 +1,5 @@
 import React from 'react'
-export const Seacrh = props => {
+ const Seacrh = props => {
      return (
         <div className="search">
             <h1 className="search__title">{`Hello, ${props.name}. What to search for you?`}</h1>
@@ -10,3 +10,4 @@ export const Seacrh = props => {
         </div>
     )
 }
+export default Seacrh;
