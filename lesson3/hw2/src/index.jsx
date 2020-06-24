@@ -14,4 +14,4 @@ const rootElement = document.querySelector('#root')
 ReactDOM.render(<Profile
     UserData={UserData}
 
-/>, rootElement)
+/>,  rootElement)
