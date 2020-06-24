@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import Profile from './Profile.jsx'
 
 
-const UserData= {
+const userData= {
     firstName:"John",
     lastName:"Doe",
     birthDate:`2003-01-01T11:11:11.819Z`,
@@ -12,6 +12,6 @@ const UserData= {
 }
 const rootElement = document.querySelector('#root')
 ReactDOM.render(<Profile
-    UserData={UserData}
+    userData={userData}
 
 />,  rootElement)
