@@ -12,8 +12,8 @@ const Greeting = (props) => {
     )
 }
 ReactDOM.render(<Greeting
-    firstName='John'
-    lastName="Dou"
+    firstName="John"
+    lastName="Doe"
     birthDate={new Date(`2003-01-01T11:11:11.819Z`)}
 
 />, rootElement)
