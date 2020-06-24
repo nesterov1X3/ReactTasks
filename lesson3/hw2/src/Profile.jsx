@@ -2,12 +2,10 @@ import React from 'react';
 import moment from 'moment';
 
 
-
+const birthD = (date) => {
+    return moment(new Date(date)).format('DD MMM YY')
+ }
 const Profile = (props) => {
-
-    const birthD = (date) => {
-       return moment(new Date(date)).format('DD MMM YY')
-    }
 
     return (
         <>
