@@ -1,10 +1,8 @@
 import React from 'react';
-import moment from 'moment';
+import birthD from './birthDay.jsx'
 
 
-const birthD = (date) => {
-    return moment(new Date(date)).format('DD MMM YY')
- }
+
 const Profile = (props) => {
 
     return (
