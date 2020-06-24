@@ -8,4 +8,4 @@ const rootElement = document.querySelector('#root');
 
 
 
-ReactDOM.render(<Seacrh name="Tom"/>, rootElement)
+ReactDOM.render(<Comment name="Tom"/>, rootElement)
