@@ -1,22 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss'
 
-const rootElement = document.querySelector('#root')
+
 
 const Greeting = (props) => {
-
     const age = (new Date().getFullYear() - new Date(props.birthDate).getFullYear());
     return (
         <div className="greeting">{`My name is ${props.firstName} ${props.lastName}. I'm ${age} years old`}</div>
     )
 }
-ReactDOM.render(<Greeting
-    firstName="John"
-    lastName="Doe"
-    birthDate={new Date(`2003-01-01T11:11:11.819Z`)}
 
-/>, rootElement)
+export default Greeting;
 
 
-export default Greeting
+
