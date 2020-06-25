@@ -15,7 +15,7 @@ class Clock extends Component {
         }
         setInterval(() => {
             this.setState({
-                time: this.state.time //что то нужно добавить
+                time: this.state.time    //что то нужно добавить
             })
         },props.interval)
     }
