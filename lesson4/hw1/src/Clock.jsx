@@ -10,14 +10,14 @@ class Clock extends Component {
         super()
         this.state = {
             location: props.city,
-            offset: props.time,
-            time:getTrueFromat(getTimeWithOffset(3))
+            offset: props.timeT,
+            time:getTrueFromat(getTimeWithOffset(props.timeT))
         }
         setInterval(() => {
             this.setState({
                 time: this.state.time //что то нужно добавить
             })
-        },1000)
+        },props.interval)
     }
     render() {
         return (

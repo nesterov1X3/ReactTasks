@@ -4,9 +4,9 @@ import Clock from './Clock.jsx';
 const App = ()=> {
     return (
         <>
-       <Clock loacation={'London'} offset={2} />
-       <Clock loacation={'Paris'} offset={64323} />
-       <Clock loacation={'Menfis'} offset={42} />
+       <Clock location={'London'} timeT={2} interval={1000} />
+       <Clock location={'Paris'} timeT={64323} interval={1000} />
+       <Clock location={'Menfis'} timeT={42} interval={1000} />
        
        </>
     );
