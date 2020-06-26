@@ -5,8 +5,8 @@ const App = ()=> {
     return (
         <>
        <Clock location='London' timeLocal={2}  />
-       <Clock location='Paris' timeLocal={64323}  />
-       <Clock location='Memfis' timeLocal={42}  />
+       <Clock location='Paris' timeLocal={6}  />
+       <Clock location='Memfis' timeLocal={4}  />
        
        </>
     );

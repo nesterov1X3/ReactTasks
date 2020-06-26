@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import './clock.scss'
-// import moment from 'moment';
-// import  {getTimeWithOffset} from './getTime.js'
-// import { getTrueFromat} from './getTime.js'
-
 
 export  const  getTimeWithOffset = offset =>{
     const currentTime = new Date();
@@ -11,17 +7,13 @@ export  const  getTimeWithOffset = offset =>{
     return new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset));
 }
 
-// export const getTrueFromat = (date) => {
-//   return moment(date).format('HH:mm:ss');
-// }
-
 class Clock extends Component {
     constructor(props){
         super(props)
         this.state = {
             location: props.city,
             offset: props.timeLocal,
-            time:getTimeWithOffset(props.timeLocal).toLocaleTimeString('en-US')
+            time:getTimeWithOffset(props.timeLocal).toLocaleTimeString('en-US',{ timeZone: 'UTC'})
         }
         setInterval(() => {
             this.setState({
