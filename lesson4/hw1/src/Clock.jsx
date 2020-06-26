@@ -21,7 +21,7 @@ class Clock extends Component {
         this.state = {
             location: props.city,
             offset: props.timeLocal,
-            time:getTimeWithOffset(props.timeLocal).toLocaleTimeString('en-US',{ timeZone: 'UTC'})
+            time:getTimeWithOffset(props.timeLocal).toLocaleTimeString('en-US')
         }
         setInterval(() => {
             this.setState({
