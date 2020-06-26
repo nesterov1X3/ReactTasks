@@ -25,7 +25,7 @@ class Clock extends Component {
         }
         setInterval(() => {
             this.setState({
-                time:getTimeWithOffset(this.state.offset).toLocaleTimeString('en-US')
+                time:getTimeWithOffset(this.state.offset).toLocaleTimeString('en-US',{ timeZone: 'UTC'})
             })
         },1000)
     }
