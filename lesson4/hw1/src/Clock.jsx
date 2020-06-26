@@ -1,29 +1,40 @@
 import React, { Component } from 'react';
 import './clock.scss'
-import  {getTimeWithOffset} from './getTime.js'
-import { getTrueFromat} from './getTime.js'
+// import moment from 'moment';
+// import  {getTimeWithOffset} from './getTime.js'
+// import { getTrueFromat} from './getTime.js'
 
-// const finalTime = getTrueFromat(getTimeWithOffset(3))
+
+export  const  getTimeWithOffset = offset =>{
+    const currentTime = new Date();
+    const utcOffset = currentTime.getTimezoneOffset()/60;
+    return new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset));
+}
+
+// export const getTrueFromat = (date) => {
+//   return moment(date).format('HH:mm:ss');
+// }
 
 class Clock extends Component {
     constructor(props){
-        super()
+        super(props)
         this.state = {
             location: props.city,
-            offset: props.timeT,
-            time:getTrueFromat(getTimeWithOffset(props.timeT))
+            offset: props.timeLocal,
+            time:getTimeWithOffset(props.timeLocal).toLocaleTimeString('en-US')
         }
         setInterval(() => {
             this.setState({
-                time: this.state.time    //что то нужно добавить
+                time:getTimeWithOffset(this.state.offset).toLocaleTimeString('en-US')
             })
-        },props.interval)
+        },1000)
     }
     render() {
         return (
+            
         <div className="clock">
             <div className="clock__location">
-                {this.state.location}
+                {this.props.location}
             </div>
             <div className="clock__time">
                 {this.state.time}
