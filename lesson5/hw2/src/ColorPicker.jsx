@@ -19,7 +19,7 @@ class ColorPicker extends React.Component {
         }
         switchColorTextAqua = () => {
             this.setState({
-                color: this.state.title = 'Aqua',
+                color: this.state.title = 'Auqa',
 
             })
         }
@@ -28,6 +28,11 @@ class ColorPicker extends React.Component {
                 color: this.state.title = 'Bisque',
 
             })
+        }
+        clearText= () =>{
+           this.setState({
+               color: this.state.title = ''
+           })
         }
     
     render() {
@@ -39,11 +44,14 @@ class ColorPicker extends React.Component {
                 <div>
                     <button
                     onMouseMove={() => this.switchColorTextCoral()}
+                    onMouseOut={() => this.clearText()}
                      className="picker__button picker__button_coral"></button>
                     <button 
+                    onMouseOut={() => this.clearText()}
                     onMouseMove={() => this.switchColorTextAqua()}
                     className="picker__button picker__button_aqua"></button>
                     <button
+                    onMouseOut={() => this.clearText()}
                     onMouseMove={() => this.switchColorTextBisque()}
                      className="picker__button picker__button_bisque"></button>
                 </div>
