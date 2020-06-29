@@ -2,7 +2,9 @@
 // записать в консруктор
 
 import React from 'react';
-
+const coral = document.querySelector('.picker__button_coral');
+const auqa = document.querySelector('.picker__button_aqua');
+const bisque = document.querySelector('.picker__button_bisque');
 
 class ColorPicker extends React.Component {
     constructor(props) {
@@ -11,49 +13,40 @@ class ColorPicker extends React.Component {
             title: 'Red',
         }
     }
-        switchColorTextCoral = () => {
-            this.setState({
-                color: this.state.title = 'Coral',
 
-            })
-        }
-        switchColorTextAqua = () => {
-            this.setState({
-                color: this.state.title = 'Auqa',
-
-            })
-        }
-        switchColorTextBisque = () => {
-            this.setState({
-                color: this.state.title = 'Bisque',
-
-            })
-        }
-        clearText= () =>{
-           this.setState({
-               color: this.state.title = ''
-           })
-        }
+    switchColorText = (text) => {
+        this.setState({
+                    color: this.state.title = text,
     
+                })
+
+    }
+
+    clearText = () => {
+        this.setState({
+            color: this.state.title = ''
+        })
+    }
+
     render() {
         return (
             <div>
                 <div className="picker__title">
                     {this.state.title}
-               </div>
+                </div>
                 <div>
                     <button
-                    onMouseMove={() => this.switchColorTextCoral()}
-                    onMouseOut={() => this.clearText()}
-                     className="picker__button picker__button_coral"></button>
-                    <button 
-                    onMouseOut={() => this.clearText()}
-                    onMouseMove={() => this.switchColorTextAqua()}
-                    className="picker__button picker__button_aqua"></button>
+                        onMouseMove={() => this.switchColorText('Coral')}
+                        onMouseOut={() => this.clearText()}
+                        className="picker__button picker__button_coral"></button>
                     <button
-                    onMouseOut={() => this.clearText()}
-                    onMouseMove={() => this.switchColorTextBisque()}
-                     className="picker__button picker__button_bisque"></button>
+                        onMouseOut={() => this.clearText()}
+                        onMouseMove={() => this.switchColorText('Aqua')}
+                        className="picker__button picker__button_aqua"></button>
+                    <button
+                        onMouseOut={() => this.clearText()}
+                        onMouseMove={() => this.switchColorText('Bisqua')}
+                        className="picker__button picker__button_bisque"></button>
                 </div>
             </div>
         )
