@@ -2,9 +2,6 @@
 // записать в консруктор
 
 import React from 'react';
-const coral = document.querySelector('.picker__button_coral');
-const auqa = document.querySelector('.picker__button_aqua');
-const bisque = document.querySelector('.picker__button_bisque');
 
 class ColorPicker extends React.Component {
     constructor(props) {
