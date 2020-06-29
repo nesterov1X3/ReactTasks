@@ -33,16 +33,16 @@ class ColorPicker extends React.Component {
                 </div>
                 <div>
                     <button
-                        onMouseMove={() => this.switchColorText('Coral')}
+                        onMouseOver={() => this.switchColorText('Coral')}
                         onMouseOut={() => this.clearText()}
                         className="picker__button picker__button_coral"></button>
                     <button
                         onMouseOut={() => this.clearText()}
-                        onMouseMove={() => this.switchColorText('Aqua')}
+                        onMouseOver={() => this.switchColorText('Aqua')}
                         className="picker__button picker__button_aqua"></button>
                     <button
                         onMouseOut={() => this.clearText()}
-                        onMouseMove={() => this.switchColorText('Bisqua')}
+                        onMouseOver={() => this.switchColorText('Bisqua')}
                         className="picker__button picker__button_bisque"></button>
                 </div>
             </div>
