@@ -42,7 +42,7 @@ class ColorPicker extends React.Component {
                         className="picker__button picker__button_aqua"></button>
                     <button
                         onMouseOut={() => this.clearText()}
-                        onMouseOver={() => this.switchColorText('Bisqua')}
+                        onMouseOver={() => this.switchColorText('Bisque')}
                         className="picker__button picker__button_bisque"></button>
                 </div>
             </div>
