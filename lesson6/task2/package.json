@@ -1,6 +1,7 @@
 {
-  "name": "task1",
+  "name": "task2",
   "version": "1.0.0",
+  "description": "",
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server -d --devtool eval-source-map --open",
@@ -31,6 +32,5 @@
     "core-js": "^3.6.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
-  },
-  "description": ""
+  }
 }
