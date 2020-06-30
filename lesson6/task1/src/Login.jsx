@@ -1,7 +1,16 @@
-// import React from 'react';
+import React from 'react'
 
-// const onLogin = () => {
-//     return <button onClick={this.handleLogout}>Logout</button>
-// }
 
-// export default onLogin;
+class OnLogin extends React.Component {
+
+    handleLogout = () => {
+        this.setState({
+            isLoggedIn: true,
+        })
+    }
+    render() {
+        return <button onClick={this.handleLogout}>Logout</button>
+    }
+}
+
+export default OnLogin;
