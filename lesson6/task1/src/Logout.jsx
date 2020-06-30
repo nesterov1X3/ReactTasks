@@ -1,15 +1,9 @@
 import React from 'react';
 
-class OnLogout extends React.Component{
+const Logout = ({ onLogout }) => (
+  <button className='login btn' onClick={onLogout}>
+    Logout
+  </button>
+);
 
-    handleLogin = () => {
-        this.setState({
-            isLoggedIn: false,
-        })
-    }
-    render(){
-    return <button onClick={this.handleLogin}>Login</button>
-    }
-}
-
-export default OnLogout;
+export default Logout;
