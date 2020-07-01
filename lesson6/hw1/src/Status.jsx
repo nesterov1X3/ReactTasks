@@ -13,7 +13,7 @@ class Status extends React.Component {
 
     render(){
         if(this.props.isOnline){
-            return <Online isOnline={this.isOnline}/>
+            return <Online/>
         }
         return  <Offline />
     }
