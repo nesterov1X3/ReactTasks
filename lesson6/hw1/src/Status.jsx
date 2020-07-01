@@ -8,23 +8,23 @@ class Status extends React.Component {
         super(props)
 
         this.state = {
-            isOnlineForm: true
+            isOnline: false
         }
     }
-    isOnline = () => {
-        this.setState({
-            isOnlineForm: false
-        })
-    }
-    isOffline = () => {
-        this.setState({
-            isOnlineForm: false
-        })
-    }
+    // isOnline = () => {
+    //     this.setState({
+    //         isOnline: false
+    //     })
+    // }
+    // isOffline = () => {
+    //     this.setState({
+    //         isOnlisOnlineineForm: false
+    //     })
+    // }
 
 
     render(){
-        if(this.state.isOnlineForm){
+        if(this.state.isOnline){
             return <Online />
         }
         return  <Offline />
