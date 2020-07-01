@@ -13,18 +13,18 @@ class Status extends React.Component {
     }
     isOnline = () => {
         this.setState({
-            isOnlineForm: true
+            isOnlineForm: false
         })
     }
     isOffline = () => {
         this.setState({
-            isOnlineForm: false
+            isOnlineForm: true
         })
     }
 
 
     render(){
-        if(this.isOnlineForm){
+        if(this.isOnline){
             return <Online />
         }
         
