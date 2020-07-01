@@ -5,7 +5,7 @@ import Offline from './Offline.jsx'
 
 class Status extends React.Component {
     constructor(props){
-        super()
+        super(props)
 
         this.state = {
             isOnlineForm: true
@@ -18,17 +18,16 @@ class Status extends React.Component {
     }
     isOffline = () => {
         this.setState({
-            isOnlineForm: true
+            isOnlineForm: false
         })
     }
 
 
     render(){
-        if(this.isOnline){
+        if(this.state.isOnlineForm){
             return <Online />
         }
-        
-        return  <Offline onOffline={this.isOffline}/>
+        return  <Offline />
     }
 }
 
