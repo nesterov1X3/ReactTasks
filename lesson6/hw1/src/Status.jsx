@@ -4,14 +4,20 @@ import Offline from './Offline.jsx'
 
 
 class Status extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
 
 
     }
-   
 
-    render(){
+
+    render() {
+    
+        //     {this.props.isOnline ? (
+        //         <Online />
+        //         ) : (<Offline />
+        //         )
+        // }
         if(this.props.isOnline){
             return <Online/>
         }
