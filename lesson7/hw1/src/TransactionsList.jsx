@@ -1,7 +1,7 @@
 import React from 'react';
 import Transaction from './Transaction.jsx';
 
-class TransactionList extends React.Component {
+class TransactionsList extends React.Component {
   
   render(){
     const {transactions} = this.props;
@@ -9,8 +9,8 @@ class TransactionList extends React.Component {
     return(
       <div>
       <ul className="transactions">
-      {transactions.map(transaction => (
-        <Transaction key={transaction.id} {...transaction} />
+      {transactions.map(transactions => (
+        <Transaction key={transactions.id} {...transactions} />
       ))}
     </ul>
     </div>
@@ -20,4 +20,4 @@ class TransactionList extends React.Component {
 }
 
 
-export default TransactionList
+export default TransactionsList
