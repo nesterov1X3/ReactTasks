@@ -9,8 +9,8 @@ class TransactionList extends React.Component {
     return(
       <div>
       <ul className="transactions">
-      {transactions.map(trans => (
-        <Transaction key = {Math.random()} rate={trans.rate} amount={trans.amount} from={trans.from} to={trans.to}/>
+      {transactions.map(transaction => (
+        <Transaction key={transaction.id} {...transaction} />
       ))}
     </ul>
     </div>
