@@ -37,16 +37,16 @@ const users =[
         age: 61,
         name: 'Sick'
     },
-    {
-        id: 7,
-        age: 61,
-        name: 'Sick'
-    },
-    {
-        id: 8,
-        age: 61,
-        name: 'Sick'
-    }
+    // {
+    //     id: 7,
+    //     age: 61,
+    //     name: 'Sick'     
+    // },
+    // {
+    //     id: 8,
+    //     age: 61,
+    //     name: 'Sick'
+    // }
 ]
 
 
