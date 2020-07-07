@@ -1,5 +1,6 @@
 import React from 'react'
 import User from './Users.jsx'
+import Pagination from './Pagination.jsx'
 
 //algo
 // render users
@@ -11,35 +12,55 @@ import User from './Users.jsx'
 class UsersList extends React.Component {
   state = {
     currentPage: 0,
-    itemsPage: 3
+    itemsPerPage: 3
+  }
+
+  goNext = () => {
+    this.setState({
+      currentPage: this.state.currentPage + 1
+    })
+
+  }
+  goPrev = () => {
+    this.setState({
+      currentPage: this.state.currentPage - 1
+    })   
+
   }
 
 
   render() {
-    const {users} = this.props;
-    const {currentPage, itemsPage} = this.state;
 
-    const startIndex = currentPage * itemsPage;
-    const endIndex = startIndex + itemsPage;
+    const { users } = this.props;
+    const { currentPage, itemsPerPage } = this.state;
+
+    const startIndex = currentPage * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
 
 
     const usersToShow = users.slice(startIndex, endIndex)
 
 
     return (
-    <div>
-  
-      <ul className="users">
-        {usersToShow.map(user => (
-          <User key={Math.random()} name={user.name} age = {user.age}/>
-        ))
+      <div>
+        <Pagination
+         goNext={this.goNext}
+          goPrev={this.goPrev}
+          currentPage={currentPage + 1}
+          itemsPerPage={itemsPerPage}
+          totalItems={users.length}
+        />
 
-        }
-        
-      </ul>
-    </div>
+        <ul className="users">
+          {usersToShow.map(user => (
+            <User key={user.id} {...user} />
+          ))
+          }
+
+        </ul>
+      </div >
     )
   }
 }
 
-export  default UsersList;
+export default UsersList;
