@@ -7,11 +7,11 @@ class Life extends Component {
         console.log('constructor: good place to create state')
     }
     componentDidMount() {
-        console.log('componentDidMount: APL calls, subscriptors')
+        console.log('componentDidMount: APL calls, subscriptions')
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        console.log('shouldComponentUpdate(nextProps, nextState): decide to render or not render')
+        console.log('shouldComponentUpdate(nextProps, nextState): decide to render or not to render')
     }
 
     componentDidUpdate(prevProps, prevState) {
