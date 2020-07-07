@@ -7,10 +7,12 @@ const BLUE = '#00f'
 class Toggler extends React.Component {
     constructor(props) {
         super(props)
+        
         this.state = {
             condition: 'Off',
             color: RED
         }
+        console.log(this.state.condition)
     }
     setBodyColorChangeText = () => {
         if (this.state.condition == 'Off') {
