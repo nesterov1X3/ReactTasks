@@ -16,7 +16,11 @@ class ConnectionStatus extends React.Component {
         window.addEventListener('offline', this.statusInternetOf)
         window.addEventListener('online', this.statusInternetOn)
 
-       
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('offline', this.statusInternetOf)
+        window.removeEventListener('online', this.statusInternetOn)
     }
     
 //for offline
@@ -43,10 +47,7 @@ class ConnectionStatus extends React.Component {
     }
 
     //clear
-    componentWillUnmount() {
-        window.addEventListener('offline', this.statusInternetOf)
-        window.addEventListener('online', this.statusInternetOn)
-    }
+   
     
     render() {
         if(this.state.status == "online"){
