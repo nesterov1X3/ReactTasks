@@ -27,7 +27,7 @@ class ConnectionStatus extends React.Component {
 
     setOffline = (status) => {
         this.setState({
-            status: offline
+            status: "offline"
         })
     }
 //for online
@@ -38,8 +38,14 @@ class ConnectionStatus extends React.Component {
 
     setOnline = (status) => {
         this.setState({
-            status: online
+            status: "online"
         })
+    }
+
+    //clear
+    componentWillUnmount() {
+        window.addEventListener('offline', this.statusInternetOf)
+        window.addEventListener('online', this.statusInternetOn)
     }
     
     render() {
