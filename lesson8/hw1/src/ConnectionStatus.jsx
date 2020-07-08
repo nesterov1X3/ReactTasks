@@ -5,19 +5,18 @@ import React from 'react'
 //clear onMount
 class ConnectionStatus extends React.Component {
         state = {
-            status: 'online'
+            status: "online"
         }
     
     
 
     componentDidMount(){
-        const { online, offline } = window;
+        // const { online, offline } = window;
 
         window.addEventListener('offline', this.statusInternetOf)
         window.addEventListener('online', this.statusInternetOn)
 
-        // this.setOffline(offline)
-        // this.setOnline(online)
+       
     }
     
 //for offline
