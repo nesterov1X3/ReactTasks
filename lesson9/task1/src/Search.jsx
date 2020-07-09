@@ -1,14 +1,17 @@
 import React from 'react';
 
 class Search extends React.Component {
-    state = { value: 'Search text:' }
+    state = {
+         value: '',
+         alertVal: 'Search text:'
+         }
 
     handleChange = event => {
         this.setState({value: event.target.value})
     }
      search = event => {
         event.preventDefault()
-         alert(this.state.value)
+         alert(this.state.alertVal)
      }
 
     render() {
