@@ -8,8 +8,6 @@ class ConnectionStatus extends React.Component {
             status: "online"
         }
     
-    
-
     componentDidMount(){
         // const { online, offline } = window;
 
@@ -55,7 +53,6 @@ class ConnectionStatus extends React.Component {
         }else{
             return (<div className="status status_offline">{this.state.status}</div>)
         }
-        // return (<div className="status status_offline">{this.state.status}</div>)
     }
 }
 
