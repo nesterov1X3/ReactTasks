@@ -1,13 +1,17 @@
 import React from 'react';
 
 class UserForm extends React.Component {
-
-    state = {
+constructor(props){
+    super(props)
+    this.state = {
         name: '',
         student: '',
         occupation: '',
         about: '',
     }
+    const { user } = this.props;
+}
+    
 
     handleChange = event => {
         const { name, value, checked, type } = event.target;
@@ -21,14 +25,17 @@ class UserForm extends React.Component {
         })
     };
 
-    createUser = event => {
+    
+
+    createUser = user => {
         event.preventDefault()
-        console.log(this.state);
+        console.log(this.props.user);
         
     }
 
 
     render() {
+        
         return (
             
                 <form className="login-form" onSubmit={this.createUser}>
