@@ -2,7 +2,7 @@ import React from 'react';
 
 class Search extends React.Component {
     state = {
-         value: '',
+         value: 'good restaurant',
          alertVal: 'Search text:'
          }
 
@@ -11,7 +11,7 @@ class Search extends React.Component {
     }
      search = event => {
         event.preventDefault()
-         alert(this.state.alertVal)
+         alert(`${this.state.alertVal} ${this.state.value}`)
      }
 
     render() {
