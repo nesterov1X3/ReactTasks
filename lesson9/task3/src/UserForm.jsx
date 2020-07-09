@@ -9,7 +9,7 @@ class UserForm extends React.Component {
             (acc, [name, value]) => ({...acc, [name]:value}),
         {},
         )
-        console.log(formData)
+        this.props.onSubmit(formData);
       };
 
      setRef = node => {
