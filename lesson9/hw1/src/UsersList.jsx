@@ -7,16 +7,15 @@ class UsersList extends Component {
         super(props)
 
         this.state = {
-            filterText: '',
+            filterText: null,
             count: null,
-            value: null
         }
     }
 
     onChange = (event) => {
         // event.preventDefault();
         this.setState({
-            value:event.target.value
+            value:event.target.filterText
         }) 
     };
 
@@ -39,7 +38,6 @@ class UsersList extends Component {
                     count={this.state.count}
                     onChange={this.onChange}
                     filterText={this.state.filterText}
-                    value={this.state.value}
                 />
             </>
         )
