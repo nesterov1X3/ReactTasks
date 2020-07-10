@@ -7,7 +7,7 @@ class UsersList extends Component {
         super(props)
 
         this.state = {
-            filterText: "To",
+            filterText: "",
         }
     }
 
@@ -17,14 +17,13 @@ class UsersList extends Component {
 
     onChange = (event) => {
         this.setState({
-            value: event.target.filterText
+            filterText: event.target.value
         })
     };
 
     
 
     render() {
-        const { users } = this.props;
 
         return (
             <>
