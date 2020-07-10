@@ -7,35 +7,34 @@ class UsersList extends Component {
         super(props)
 
         this.state = {
-            filterText: null,
-            count: null,
+            filterText: "To",
         }
     }
 
+    filterUsers = () => this.props.users.filter((user) =>
+      user.name.toUpperCase().includes(this.state.filterText.toUpperCase())
+    );
+
     onChange = (event) => {
-        // event.preventDefault();
         this.setState({
-            value:event.target.filterText
-        }) 
+            value: event.target.filterText
+        })
     };
 
-    // filterText = (event) => {
-    //     this.setState({
-    //         filterText: event.target.filterText,
-    //     })
-    // }
+    
 
     render() {
         const { users } = this.props;
+
         return (
             <>
-                <div>{users.map(user => (
+                <div>{this.filterUsers().map(user => (
                     <User key={user.id} {...user} />
                 ))
                 }</div>
 
                 <Filter
-                    count={this.state.count}
+                    count={this.filterUsers().length}
                     onChange={this.onChange}
                     filterText={this.state.filterText}
                 />
