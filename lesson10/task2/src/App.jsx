@@ -5,8 +5,8 @@ import Profile from './Profile.jsx'
 class Page extends React.Component {
     state = {
         userData: {
-            firstName: 'Tom',
-            lastName: 'Form',
+            firstName: 'John',
+            lastName: 'Doe',
         },
     };
 
@@ -21,6 +21,8 @@ class Page extends React.Component {
     }
     render() {
         return (
+            <>
+            <h1 className='title'>{`Hello, ${this.state.userData.firstName}`}</h1>
             <div className="page">
                 <main className="content">
                     <ShoppingCart userData={this.state.userData} />
@@ -29,7 +31,7 @@ class Page extends React.Component {
                         handleChange={this.handleChange} />
                 </main>
             </div>
-            
+            </>
         )
     }
 }

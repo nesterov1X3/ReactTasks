@@ -15,6 +15,31 @@ class ShoppingCart extends React.Component {
                 name: 'iPad Pro',
                 price: 790,
             },
+            {
+                id: '3',
+                name: 'iPad Pro2',
+                price: 690,
+            },
+            {
+                id: '4',
+                name: 'iPad Pro',
+                price: 390,
+            },
+            {
+                id: '5',
+                name: 'iPad Pro6',
+                price: 790,
+            },
+            {
+                id: '6',
+                name: 'iPad Pro4',
+                price: 750,
+            },
+            {
+                id: '7',
+                name: 'iPad Pro2',
+                price: 1790,
+            },
         ],
     };
     render() {
