@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductList from './ProductLists.jsx'
+import ProductList from './ProductsList.jsx'
 import CartTitle from './CartTitle.jsx'
 
 class ShoppingCart extends React.Component {
