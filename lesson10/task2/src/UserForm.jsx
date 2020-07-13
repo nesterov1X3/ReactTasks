@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UserFrom = ({userData, handleChange}) => {
+const UserFrom = ({userData, onChange}) => {
 
         return (
             <form className="user-form">
@@ -9,14 +9,14 @@ const UserFrom = ({userData, handleChange}) => {
                     name="firstName"
                     className="user-form__input"
                     value={userData.firstName}
-                    onChange={handleChange}
+                    onChange={onChange}
                 />
                 <input
                     type="text"
                     name="lastName"
                     className="user-form__input"
                     value={userData.lastName}
-                    onChange={handleChange}
+                    onChange={onChange}
                 />
             </form>
         )
