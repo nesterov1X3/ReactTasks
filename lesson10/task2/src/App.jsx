@@ -20,20 +20,17 @@ class App extends React.Component {
         });
     }
     render() {
+        const {firstName, lastName} = this.state.userData;
         return (
-            <>
-            <h1 className='title'>{`Hello, ${this.state.userData.firstName}`}</h1>
-            <div className="page">
-                <main className="content">
-                    <ShoppingCart userData={this.state.userData} />
-                    <Profile
-                        userData={this.state.userData}
-                        handleChange={this.handleChange} />
-                </main>
-            </div>
-            </>
-        )
+          <div className='page'>
+            <h1 className='title'>{`Hello, ${firstName} ${lastName}`}</h1>
+            <main className='content'>
+              <ShoppingCart userName={this.state.userData.firstName} />
+              <Profile userData={this.state.userData} onChange={this.onChange} />
+            </main>
+          </div>
+        );
+      }
     }
-}
-
-export default App;
+    
+    export default App;
