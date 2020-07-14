@@ -1,7 +1,7 @@
 import React from 'react'
 
-class SearchBar extends React.Component {
-    render() {
+const SearchBar = () => {
+    
       return (
         <form>
           <input type="text" placeholder="Search..." />
@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
           </p>
         </form>
       );
-    }
+    
   }
 
 export default SearchBar;
