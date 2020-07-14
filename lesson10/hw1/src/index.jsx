@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.jsx';
+import Calculator from './Calculator.jsx';
 
 
 const rootElement = document.querySelector('#root');
 
 
-ReactDOM.render(<App />, rootElement)
+ReactDOM.render(<Calculator />, rootElement)
 
