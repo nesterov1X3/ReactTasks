@@ -1,33 +1,29 @@
 import React from 'react'
 
-class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
-    this.handleInStockChange = this.handleInStockChange.bind(this);
+const SearchBar = ({filterText, inStockOnly, handleFilterTextChange, handleInStockChange}) => {
+
+  
+  handleFilterTextChange = (e) => {
+    onFilterTextChange(e.target.value);
   }
   
-  handleFilterTextChange(e) {
-    this.props.onFilterTextChange(e.target.value);
+  handleInStockChange =(e) => {
+    onInStockChange(e.target.checked);
   }
   
-  handleInStockChange(e) {
-    this.props.onInStockChange(e.target.checked);
-  }
   
-  render() {
     return (
       <form>
         <input
           type="text"
           placeholder="Search..."
-          value={this.props.filterText}
+          value={filterText}
           onChange={this.handleFilterTextChange}
         />
         <p>
           <input
             type="checkbox"
-            checked={this.props.inStockOnly}
+            checked={inStockOnly}
             onChange={this.handleInStockChange}
           />
           {' '}
@@ -35,7 +31,6 @@ class SearchBar extends React.Component {
         </p>
       </form>
     );
-  }
 }
 
 export default SearchBar;
