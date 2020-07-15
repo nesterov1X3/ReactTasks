@@ -4,7 +4,7 @@ import Numbers from './Numbers.jsx'
 import EvenNumbers from './EvenNumbers.jsx'
 import OddNumbers from './OddNumbers.jsx'
 
-class App extends React.PureComponent {
+class App extends React.Component {
   state = {
     number: 0,
   };
