@@ -1,8 +1,8 @@
 import React from 'react'
 import './index.scss'
 import Numbers from './Numbers.jsx'
-import EvenNumbers from './EvenNumbers.jsx'
-import OddNumbers from './OddNumbers.jsx'
+// import EvenNumbers from './EvenNumbers.jsx'
+// import OddNumbers from './OddNumbers.jsx'
 
 class App extends React.Component {
   state = {
@@ -21,10 +21,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Numbers title="All numbers" number={this.state.number} />
+        
         <Numbers title="Just 17" number={17} />
-        <EvenNumbers title="Even numbers" number={this.state.number} />
-        <OddNumbers title="Odd numbers" number={this.state.number} />
+      
       </div>
     )
   }
@@ -32,3 +31,7 @@ class App extends React.Component {
 
 
 export default App;
+
+//<Numbers title="All numbers" number={this.state.number} />
+//  <EvenNumbers title="Even numbers" number={this.state.number} />
+//<OddNumbers title="Odd numbers" number={this.state.number} />

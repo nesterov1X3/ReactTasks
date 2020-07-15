@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Numbers extends React.Component {
+class Numbers extends React.PureComponent {
     render() {
         return (
             
