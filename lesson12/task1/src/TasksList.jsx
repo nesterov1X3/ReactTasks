@@ -32,7 +32,7 @@ class TasksList extends React.Component {
     }
 
 
-
+//CREATE!!!!!!!
     onCreate = text => {
         //create task obj +
         //post obj to server +
@@ -45,9 +45,9 @@ class TasksList extends React.Component {
         }
 
         fetch(baseUrl, {
-            method: 'Post',
+            method: 'POST',
             headers: {
-                'Content-Type': 'application/json;utc-8'
+                'Content-Type': 'application/json;utc-8',
             },
             body: JSON.stringify(newTask)
         }).then(response => {
@@ -61,23 +61,33 @@ class TasksList extends React.Component {
         // const updatedTasks = tasks.concat(newTask)
         // this.setState({ tasks: updatedTasks });
     }
-
+ //UPDATE!!!!!!!!!!!
     handleTaskStatusChange = id => {
         // find tasks in a list 
         // toggle done value
         // save updated list
-        const updatedTasks = this.state.tasks.map(task => {
-            if (task.id === id) {
-                return {
-                    ...task,
-                    done: !task.done
-                };
-            };
-            return task;
-        });
-        this.setState({ tasks: updatedTasks })
-    }
 
+        const {done, text} = this.state.tasks.find(task => task.id === id)
+        const updatedTask = {
+            ...text,
+            done: !done
+        };
+        fetch(`${baseUrl}/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json;utc-8',
+            },
+            body: JSON.stringify(updatedTask)
+        }).then(response => {
+            if (response.ok) {
+                this.hetchTasksList()
+            } else {
+                throw new Error('Faild to create task')
+            }
+        });
+
+    };
+//DELETE!!!!!!!!!!
     handleTaskDelete = id => {
         fetch(`${baseUrl}/${id}`, {
             method: 'DELETE',
