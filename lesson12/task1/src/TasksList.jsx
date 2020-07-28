@@ -1,8 +1,8 @@
 import React from 'react';
 import Task from './Task';
 import CreateTaskInput from './CreateTaskInput.jsx'
+import { createTask, fetchTasksList, updatedTask, deleteTask } from './tasksGateway.js'
 
-const baseUrl = 'https://crudcrud.com/api/211c2dd21b9e411aa56841c09e959046/tasks';
 
 
 class TasksList extends React.Component {
@@ -11,93 +11,59 @@ class TasksList extends React.Component {
     }
 
     componentDidMount() {
-        this.hetchTasksList()
+        this.hetchTasks()
     }
 
-    hetchTasksList = () => {
-        fetch(baseUrl).then(res => {
-            if (res.ok) {
-                return res.json()
-            }
-        })
-            .then(tasksList => {
-                const tasks = tasksList.map(({ _id, ...task }) => ({
-                    id: _id,
-                    ...task,
-                }))
+    hetchTasks = () => {
+        fetchTasksList()
+            .then(tasksList =>
                 this.setState({
-                    tasks,
-                });
-            })
-    }
+                    tasks: tasksList
+                }),
+            );
+    };
 
 
-//CREATE!!!!!!!
+    //CREATE!!!!!!!
     onCreate = text => {
-        //create task obj +
-        //post obj to server +
-        //fetch
-        // const { tasks } = this.state
         const newTask = {
-            id: Math.random(),
             text,
             done: false
         }
 
-        fetch(baseUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;utc-8',
-            },
-            body: JSON.stringify(newTask)
-        }).then(response => {
-            if (response.ok) {
-                this.hetchTasksList()
-            } else {
-                throw new Error('Faild to create task')
-            }
-        })
+        createTask(newTask)
+            .then(() => this.hetchTasks())
 
         // const updatedTasks = tasks.concat(newTask)
         // this.setState({ tasks: updatedTasks });
     }
- //UPDATE!!!!!!!!!!!
+
+
+
+    //UPDATE!!!!!!!!!!!
     handleTaskStatusChange = id => {
         // find tasks in a list 
         // toggle done value
         // save updated list
 
-        const {done, text} = this.state.tasks.find(task => task.id === id)
-        const updatedTask = {
+        const { done, text } = this.state.tasks.find(task => task.id === id)
+        const upTask = {
             ...text,
             done: !done
         };
-        fetch(`${baseUrl}/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json;utc-8',
-            },
-            body: JSON.stringify(updatedTask)
-        }).then(response => {
-            if (response.ok) {
-                this.hetchTasksList()
-            } else {
-                throw new Error('Faild to create task')
-            }
-        });
 
+        updatedTask(id, upTask)
+            .then(() => this.hetchTasks())
+
+
+
+            
     };
-//DELETE!!!!!!!!!!
+    //DELETE!!!!!!!!!!
     handleTaskDelete = id => {
-        fetch(`${baseUrl}/${id}`, {
-            method: 'DELETE',
-        }).then(response => {
-            if (response.ok) {
-                this.hetchTasksList()
-            } else {
-                throw new Error('Faild to create task')
-            }
-        })
+        deleteTask(id)
+        .then(() => this.hetchTasks())
+        
     };
 
 
