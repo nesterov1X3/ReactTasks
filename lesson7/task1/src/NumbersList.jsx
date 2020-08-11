@@ -9,4 +9,4 @@ const NumbersList = ({ numbers }) => {
 
   return element
 }
-export default NumbersList
+export default NumbersList;
