@@ -6,34 +6,36 @@ import React, { useState, useEffect } from 'react'
 const ConnectionStatus = () => {
     const [status, setConecting] = useState('online')
 
-    useEffect(() =>{
+    useEffect(() => {
 
-        const statusInternetOf= (e) => {
-                    const {  offline } = e.target;
-                    setOffline(offline)
-                }
-    
-                const setOffline = (status) => {
-                setConecting(status = "offline")
-            
+        const statusInternetOf = (e) => {
+            const { offline } = e.target;
+            setOffline(offline)
         }
-    //for online
-    const statusInternetOn =(e) => {
+
+        const setOffline = (status) => {
+            setConecting(status = "offline")
+
+        }
+        //for online
+        const statusInternetOn = (e) => {
             const { online } = e.target;
             this.setOnline(online)
         }
-    
-        const  setOnline = (status) => {
+
+        const setOnline = (status) => {
             setConecting(status = "online")
-            
+
         }
         //clear
-        
-     
+
         window.addEventListener('offline', statusInternetOf)
         window.addEventListener('online', statusInternetOn)
-
-    })
+        return () => {
+            window.removeEventListener('offline', statusInternetOf)
+            window.removeEventListener('online', statusInternetOn)
+        }
+    }, [])
     const changeClassName = (status) => `status ${status === "offline" ? "status_offline" : ""}`;
     return <div className={changeClassName(status)}>{status}</div>;
 }
@@ -43,7 +45,7 @@ const ConnectionStatus = () => {
 //         state = {
 //             status: "online"
 //         }
-    
+
 //     componentDidMount(){
 //         // const { online, offline } = window;
 
@@ -56,7 +58,7 @@ const ConnectionStatus = () => {
 //         window.removeEventListener('offline', this.statusInternetOf)
 //         window.removeEventListener('online', this.statusInternetOn)
 //     }
-    
+
 // //for offline
 //     statusInternetOf= (e) => {
 //         const {  offline } = e.target;
@@ -82,7 +84,7 @@ const ConnectionStatus = () => {
 
 //     //clear
 //     changeClassName = (status) => `status ${status === "offline" ? "status_offline" : ""}`;
-    
+
 //     render() {
 //         return <div className={this.changeClassName(this.state.status)}>{this.state.status}</div>;
 //         // if(this.state.status == "online"){
