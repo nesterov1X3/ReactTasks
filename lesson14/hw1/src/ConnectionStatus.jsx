@@ -17,20 +17,22 @@ const ConnectionStatus = () => {
             setConecting(status = "offline")
 
         }
-        //for online
-        const statusInternetOn = (e) => {
-            const { online } = e.target;
-            this.setOnline(online)
-        }
-
         const setOnline = (status) => {
             setConecting(status = "online")
 
         }
+        //for online
+        const statusInternetOn = (e) => {
+            const { online } = e.target;
+            setOnline(online)
+        }
+
+       
         //clear
 
         window.addEventListener('offline', statusInternetOf)
         window.addEventListener('online', statusInternetOn)
+
         return () => {
             window.removeEventListener('offline', statusInternetOf)
             window.removeEventListener('online', statusInternetOn)
