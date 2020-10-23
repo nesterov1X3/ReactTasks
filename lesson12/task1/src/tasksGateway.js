@@ -16,10 +16,10 @@ export const createTask = taskData => {
 
 export const fetchTasksList = () => {
     return fetch(baseUrl).then(res => {
-        if (res.ok) {
-            return res.json()
-        }
-    })
+            if (res.ok) {
+                return res.json()
+            }
+        })
         .then(tasksList => {
             return tasksList.map(({ _id, ...task }) => ({
                 id: _id,
@@ -39,7 +39,7 @@ export const updatedTask = (taskId, taskData) => {
     }).then(response => {
         if (!response.ok) {
             throw new Error('Faild to create task')
-        } 
+        }
     });
 }
 
@@ -49,6 +49,6 @@ export const deleteTask = taskId => {
     }).then(response => {
         if (!response.ok) {
             throw new Error('Faild to create task')
-        } 
+        }
     })
 }
